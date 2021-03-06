@@ -1,2 +1,1 @@
-# talmo
-Templates for Teaching and Learning Mathematics Online Workshop 
+# Templates for Teaching and Learning Mathematics Online Workshop 
