@@ -1,0 +1,94 @@
+---
+title: Generating accessible materials using Rmarkdown & Make
+author: Clement Lee
+date: 2021-03-17 (Wed)
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+classoption: "aspectratio=169"
+---
+
+## Setting the scene
+Goal
+
+1. Questions in pdf
+2. Questions in html
+3. Solutions in pdf
+4. Solutions in html
+
+Recipe
+
+1. ~~questions.tex~~, ~~solutions.tex~~
+2. An Rmarkdown (Rmd) file
+3. A makefile
+4. RStudio (recommended) 
+
+## Markdown
+
+<!-- * A mark-up language like LaTeX -->
+<!-- * More gentle learning curve -->
+
+`---`  
+`title: Generating accessible materials using Rmarkdown & Make`  
+`author: Clement Lee`  
+`date: 2021-03-17 (Wed)`  
+`output: beamer_presentation`  
+`---`  
+`   `  
+`## Setting the scene`  
+`Goal`  
+`    `  
+`1. Questions in pdf`  
+
+## Simpler than LaTeX
+
+`\documentclass{beamer}`  
+`\title{Generating accessible materials using R Markdown & Make}`  
+`\author{Clement Lee}`  
+`\date{2021-03-17 (Wed)}`  
+`    `  
+`\begin{document}`  
+`\frame{\titlepage}`  
+`    `  
+`\begin{frame}`  
+`\frametitle{Setting the scene}`  
+`Goal`  
+`    `  
+`\begin{enumerate}`  
+`\item Questions in pdf`
+
+## R Markdown = R + Markdown
+* Markdown for the text
+* R code chunks
+* Reproducible documents
+* The use of backticks
+
+## Questions & Solutions in same document
+* Code chunk options
+* `include = FALSE`: Questions only 
+* `include = TRUE`: Questions + solutions
+* Still need to toggle this option manually
+
+## Level up
+* Parametrise the Rmd file
+* Make: builds file from source code
+* Bundling four commands in one makefile
+
+## What if you ...
+* ... don't know about / need R?
+* ... just want maths beautifully typeset in LaTeX?
+
+I would still recommend this approach
+
+* R code chunks are really optional
+* Not all is lost - R Markdown accepts some LaTeX environments
+
+## Caveats
+* Trade-off between:
+    - Ability to generate pdf & html using the same source code
+    - Full capabilities within LaTeX: environments, user-defined commands, etc.
+* For maths typeset in solutions, need double backslash `\\` to represent escape character in LaTeX
+
+## Resources
+* GitHub repository: https://github.com/clement-lee/talmo.git
+* Exams package: https://cran.r-project.org/package=exams
