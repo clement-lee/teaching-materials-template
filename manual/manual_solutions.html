@@ -370,6 +370,8 @@ summary {
 </div>
 
 
+<div id="instructions" class="section level1 unnumbered">
+<h1>Instructions</h1>
 <p>If you are not familiar with the syntax of R and/or Markdown, simply:</p>
 <ol style="list-style-type: decimal">
 <li>open the source code, which has the file extension “Rmd”, in RStudio;</li>
@@ -380,6 +382,7 @@ summary {
 <li>read the content of the questions &amp; solutions in this file (no matter it is the source code or generated document) for more information.</li>
 </ol>
 <p>In the source code, a code chunk starts with a line of triple backticks &amp; the curly bracket pair, and ends with a line of triple backticks. Everything in-between will be evalulated by <code>R</code>.</p>
+</div>
 <div id="question-1" class="section level1">
 <h1>Question 1</h1>
 <p>TYPE YOUR QUESTION HERE.</p>
@@ -428,7 +431,18 @@ summary {
 <h1>Question 6</h1>
 <p>What do I need to be aware of when modifying this template?</p>
 <p><span style="color: red;">Solution:</span></p>
-<p>The source code contains at least four types of syntax: Markdown, LaTeX, <span class="math inline">\(\texttt{R}\)</span> inline, and <span class="math inline">\(\texttt{R}\)</span> code chunk. Make sure you are typing the correct syntax in the correct environment / language. For example, a line starting with a hashtag # and a space represents a section heading in Markdown, but becomes a comment line in an <span class="math inline">\(\texttt{R}\)</span> code chunk. Also, see the solution to Question 4 on typing LaTeX commands within a solution.</p>
+<ol style="list-style-type: decimal">
+<li>The source code contains at least four types of syntax: Markdown, LaTeX, <span class="math inline">\(\texttt{R}\)</span> inline, and <span class="math inline">\(\texttt{R}\)</span> code chunk. Make sure you are typing the correct syntax in the correct environment / language.
+<ul>
+<li>For example, a line starting with a hashtag # and a space represents a section heading in Markdown, but becomes a comment line in an <span class="math inline">\(\texttt{R}\)</span> code chunk. Also, see the solution to Question 4 on typing LaTeX commands within a solution.</li>
+</ul></li>
+<li>Also, there is a trade-off between the flexibility of generating pdf &amp; html using one source code file and the full capabilities within LaTeX.
+<ul>
+<li>For example, self-defined LaTeX commands may work for the pdf but not for the html.</li>
+<li>Another aspect that may not function fully is the use of environments - see Q3.</li>
+<li>Also mentioned in Q3 is the use of double backslashes, instead of single ones, within solution text.</li>
+</ul></li>
+</ol>
 </div>
 
 

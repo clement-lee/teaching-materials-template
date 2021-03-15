@@ -1,45 +1,41 @@
 ---
-title: "Template using manual toggle between questions & solutions"
+title: "`r {if (knitr::opts_chunk$get()$include) 'Template **solutions** using the automated approach via Make' else 'Template **questions** using the automated approach via Make'}`"
 author: "Clement Lee"
 date: "2021-03-17"
 output:
   pdf_document: default
-  html_document: default
+  html_docuement: default
 classoption: a4paper
 header-includes:
   \usepackage{amsmath,xcolor}
 ---
 
-If you are not familiar with the syntax of R and/or Markdown, simply:
+# Instructions
 
-1. open the source code, which has the file extension "Rmd", in RStudio;
-2. click the black triangle next to the ***Knit*** button;
-3. click the ***Knit to \<required file format\>*** button, and the generated document will pop up;
-4. toggle between `include = FALSE` & `include = TRUE` below, which correspond to the questions (only) and the solutions, respectively, and see the differences in the generated documents;
-5. try changing the questions & solutions below & observe the difference in the generated document;
-6. read the content of the questions & solutions in this file (no matter it is the source code or generated document) for more information.
-
-
-
-
+1. Edit this template as necessary.
+2. Either go to the terminal tab within RStudio, or open a terminal if you are on Unix-like platforms.
+3. Set the current directory to where this file is located, if this has not been done yet.
+4. Type `make automated` in the terminal to generate all four documents in one go:
+     i. Questions in pdf;
+	 ii. Questions in html;
+	 iii. Solutions in pdf;
+	 iv. Solutions in html.
 
 
 
 
 
 
-In the source code, a code chunk starts with a line of triple backticks & the curly bracket pair, and ends with a line of triple backticks. Everything in-between will be evalulated by `R`.
+
+
+
 
 ```{r setup, echo = FALSE}
-## Below is some R code. A line that starts with (any number of) # is a comment 
-
-## Below is where the `include` option is set globally
-knitr::opts_chunk$set(include = TRUE) # TRY TOGGLING BETWEEN TRUE & FALSE
-
 ## Below we retrieve the `include` option for later use
 is_answer <- knitr::opts_chunk$get()$include
 
 ## Below is an extra function for showing where the solution begins
+## Source: https://bookdown.org/yihui/rmarkdown-cookbook/font-color.html
 colorise <- function(x, color = "red") {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -48,9 +44,36 @@ colorise <- function(x, color = "red") {
       x)
   } else x
 }
-
-## This chunk of R code is not seen in the generated documents because of the echo = FALSE option; see answer to Q5
 ```
+
+
+
+
+
+
+
+
+
+
+# Question 0
+
+What are the main differences between this template and the "manual" template?
+
+`r if (is_answer) {colorise("Solution:")}`
+
+`r if (is_answer) {"
+1. If you compare the first $\\texttt{R}$ code chunk i.e. the code between the pair of lines with triple backticks, the following line is not in the source code of this automated template:
+"}`
+
+```{r, eval = FALSE}
+knitr::opts_chunk$set(include = TRUE) # TRY TOGGLING BETWEEN TRUE & FALSE
+```
+
+`r if (is_answer) {"
+1. (cont'd) This is because the option $\\texttt{include}$ is passed from the makefile, instead of being set manually.
+2. While you can still generate a pdf or html manually by clicking the ***Knit*** button in RStudio, you will only get the solutions as $\\texttt{include}$ is default to $\\texttt{TRUE}$ if it's not supplied.
+3. This way of parametrising the report also allows the title to be changed according to the $\\texttt{include}$ option. See the line beginning with $\\texttt{title:}$ at the top of the source code.
+"}`
 
 
 
@@ -186,5 +209,30 @@ What do I need to be aware of when modifying this template?
 `r if (is_answer) {colorise("Solution:")}`
 
 `r if (is_answer) {"
-The source code contains at least four types of syntax: Markdown, LaTeX, $\\texttt{R}$ inline, and $\\texttt{R}$ code chunk. Make sure you are typing the correct syntax in the correct environment / language. For example, a line starting with a hashtag # and a space represents a section heading in Markdown, but becomes a comment line in an $\\texttt{R}$ code chunk. Also, see the solution to Question 4 on typing LaTeX commands within a solution.
+1. The source code contains at least four types of syntax: Markdown, LaTeX, $\\texttt{R}$ inline, and $\\texttt{R}$ code chunk. Make sure you are typing the correct syntax in the correct environment / language.
+    - For example, a line starting with a hashtag # and a space represents a section heading in Markdown, but becomes a comment line in an $\\texttt{R}$ code chunk. Also, see the solution to Question 4 on typing LaTeX commands within a solution.
+2. Also, there is a trade-off between the flexibility of generating pdf & html using one source code file and the full capabilities within LaTeX.
+    - For example, self-defined LaTeX commands may work for the pdf but not for the html.
+    - Another aspect that may not function fully is the use of environments - see Q3.
+    - Also mentioned in Q3 is the use of double backslashes, instead of single ones, within solution text.
+"}`
+
+
+
+
+
+
+
+
+
+
+# Question 7
+
+What if I want to generate another set of {questions, answers} $\times$ {pdf, html} using this automated approach?
+
+`r if (is_answer) {colorise("Solution:")}`
+
+`r if (is_answer) {"
+1. You will need to create another Rmd of source code, then add a few lines in the makefile, similar to the ones for this file. 
+2. As an example, we have made a template block in the makefile, beginning with the line $\\texttt{another: another.Rmd}$. This means you need to first create the file 'another.Rmd', then type $\\texttt{make another}$ in a terminal.
 "}`
