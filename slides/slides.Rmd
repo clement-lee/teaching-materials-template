@@ -1,5 +1,5 @@
 ---
-title: Generating accessible materials using Rmarkdown & Make
+title: A unified approach to generating questions & answers of accessible materials using Rmarkdown
 author: Clement Lee
 date: 2021-03-17 (Wed)
 output:
@@ -23,27 +23,10 @@ Recipe
 3. A makefile
 4. RStudio (recommended) 
 
-## Markdown
-
-<!-- * A mark-up language like LaTeX -->
-<!-- * More gentle learning curve -->
-
-`---`  
-`title: Generating accessible materials using Rmarkdown & Make`  
-`author: Clement Lee`  
-`date: 2021-03-17 (Wed)`  
-`output: beamer_presentation`  
-`---`  
-`   `  
-`## Setting the scene`  
-`Goal`  
-`    `  
-`1. Questions in pdf`  
-
-## Simpler than LaTeX
+## LaTeX -- The traditional way
 
 `\documentclass{beamer}`  
-`\title{Generating accessible materials using R Markdown & Make}`  
+`\title{A unified approach to generating questions & answers of accessible materials using Rmarkdown}`  
 `\author{Clement Lee}`  
 `\date{2021-03-17 (Wed)}`  
 `    `  
@@ -56,6 +39,23 @@ Recipe
 `    `  
 `\begin{enumerate}`  
 `\item Questions in pdf`
+
+## Markdown -- A simpler syntax
+
+<!-- * A mark-up language like LaTeX -->
+<!-- * More gentle learning curve -->
+
+`---`  
+`title: A unified approach to generating questions & answers of accessible materials using Rmarkdown`  
+`author: Clement Lee`  
+`date: 2021-03-17 (Wed)`  
+`output: beamer_presentation`  
+`---`  
+`   `  
+`## Setting the scene`  
+`Goal`  
+`    `  
+`1. Questions in pdf`  
 
 ## R Markdown = R + Markdown
 * Markdown for the text
@@ -88,7 +88,10 @@ I would still recommend this approach
     - Ability to generate pdf & html using the same source code
     - Full capabilities within LaTeX: environments, user-defined commands, etc.
 * For maths typeset in solutions, need double backslash `\\` to represent escape character in LaTeX
+* Beware of what environment you are in as there are multiple types (R, Markdown, LaTeX) of syntax in one file
+    - The same special characters have different roles
+	- Comments are written in different ways
 
 ## Resources
-* GitHub repository: https://github.com/clement-lee/talmo.git
+* GitHub repository: https://github.com/clement-lee/talmo
 * Exams package: https://cran.r-project.org/package=exams
