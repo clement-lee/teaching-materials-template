@@ -1,0 +1,92 @@
+---
+title: "Coursework / Project / Final Assignment"
+author: "YOUR STUDENT ID AND/OR NAME HERE"
+date: "DATE HERE"
+output: 
+  bookdown::pdf_document2:
+    toc: false
+bibliography: references.bib
+classoption: a4paper
+---
+
+```{r, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo=FALSE) # no need to include R code in the pdf file, although the R code is still needed in THIS file
+## load your libraries here
+library(tidyverse)
+```
+
+# Introduction
+Here's a checklist of things to do:
+
+1. **Header**: Include your student ID in `author:`, and generate a pdf document. If you want to **reference** figures, you will also need to change the output from `pdf_document` to `bookdown::pdf_document2`.
+2. **Captions**: Even if you don't reference figures in your report, you have to **caption** them. See the examples below for captioning and working with figures.
+3. **References**: Remember to cite the references. For citing references in an Rmd file, see https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
+4. **External figures**: You can include external figures or diagrams if they cannot be created directly using R code. For example, you may want to include diagrams explaining the method(s) that you find on the Internet. You can use `knitr::include_graphics()` to do so, and you need to include the graphic file in the zip to be submitted.
+5. **R code**: Do not submit a separate R script for generating the numbers / figures / tables in the report. Insert R code chunks in the Rmd file to dynamically generate the results. There is no need to print the R code in the report, as long as it is in the Rmd file. This can be achieved by the chunk option `echo=FALSE`. The other useful options are `message=FALSE` (to suppress the messages from R e.g. those messages about conflicts when you load `tidyverse`), `include=FALSE` (to suppress printing the results). See https://yihui.org/knitr/options/ for a full list of options.
+
+# Methods
+In this project I explored the method by @islr. Here's an equation for the method:
+
+$$ \pi = 3.141592\dots $$
+And Figure \@ref(fig:flowchart) (from https://xkcd.com/518/) is the flow chart of the method:
+
+```{r flowchart, out.width="45%", fig.align="center", fig.cap="flowchart about flowcharts."}
+knitr::include_graphics("flow_charts.png")
+```
+
+# Theory
+
+## (a)
+Use align* environment if you want to align the equations using the & symbol. Use align environment if you also want equation numbers on the right (try removing the * in the Rmd file and see what happens).
+
+The likelihood is
+\begin{align*}
+  L(\boldsymbol{y}|\theta) &= \prod_{i=1}^np(y_i) \\
+  &= \prod_{i=1}^ni \\
+  &= n!
+\end{align*}
+
+## (b)
+You can also use the equation environment if there's no need for alignment. Make sure the line in the generated document is not too long.
+
+The log-likelihod is
+\begin{equation}
+  l(\boldsymbol{y}|\theta) = \log n! = \sum_{i=1}^n \log i, \label{eqn.loglik}
+\end{equation}
+and you can use equation \ref{eqn.loglik} for subsequent calculations. Observe the use of `\log`, not `log`, in equations. The same goes for `\exp`.
+
+Use `\label{}` & `\ref{}` in equation or align environment in the Rmd file when you want to label and reference equations later.
+
+## (c)
+You can also type equations using `\[` and `\]`, or a pair of double dollar signs `$$` in the source file. See the alternative in the line that is commented out in the source file.
+
+The score is
+\[ S(\boldsymbol{y}|\theta) = \frac{d}{d\theta} l(\boldsymbol{y}|\theta) = \frac{d}{d\theta} \log{}n! = 0 \]
+<!-- $$ S(\boldsymbol{y}|\theta) = \frac{d}{d\theta} l(\boldsymbol{y}|\theta) = \frac{d}{d\theta} \log{}n! = 0 \] $$ -->
+Write some text explanation before or after equations if necessary.
+
+# Results
+After coding the method in Python, the results are saved. Figure \@ref(fig:cars) shows the results:
+
+```{r cars, fig.cap="The results.", out.width="80%", fig.align = "center"}
+plot(cars)
+```
+
+You may need to use R code in the source file, but not required in the generated file. You can make the R code and messages invisible in the pdf using the options `echo=FALSE` and `message=FALSE`, respectively, in the code chunk.
+
+```{r, echo = FALSE, message = FALSE}
+library(tibble)
+library(ggplot2)
+n0 <- 50
+df0 <- tibble(x = seq(n0), y = log(x))
+ggplot(df0) + geom_line(aes(x, y))
+```
+
+You can also obtain inline results using  `` `r '\x60r \x60'` `` in the source file. For example, the number of points used for the plot is `r n0`. You can use it in equations environment too:
+
+$$ n = `r n0` $$
+
+# Conclusion
+I successfully implemented the method.
+
+# References

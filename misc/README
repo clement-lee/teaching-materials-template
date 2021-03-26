@@ -1,0 +1,11 @@
+## 2020-07-28
+
+1. There are 3 main sets of files, each of which has the same prefix (ignoring lettercases), and follows the workflow that the Rmd/md file generates the other outputs. There is also a set of supplementary files. Each set of files is explained below.
+
+2. Files with prefix `intro`: A gentle introduction is given, including system requirements, basic workflow of generating pdf, html, etc. and the difference between markdown and Rmarkdown.
+
+3. Files with prefix `template`: A template for presentation slides in both pdf & html is provided, with some basic commands and their explanation interweaved. Code for including images that allows accessibility is also templated. Anything templated is in capitals.
+
+4. Files with prefix `reproducibility`: R code chunks are included in the Rmd file for dynamic document generation and reproducibility. Therefore, unlike the other two sets of files, the Rmd file is different from the resulting md file.
+
+5. Supplementary files: The pdfs in img/ and the beamer*sty files are for generating beamer pdf. They are therefore not required for other output format. Finally, ComputingDataScience.jpg is for generating the outputs with prefix `template`.
