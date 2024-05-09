@@ -1,0 +1,37 @@
+---
+output: ""
+title: "MATH9999 Lecture 1 `r if (params$solution) 'Complete' else 'Gaps'` Version"
+author: "Clement Lee"
+date: "2024-05-13"
+classoption: "aspectratio=169"
+params:
+  solution: ""
+---
+
+## Plot the `cars` dataset in `R`. 
+   ```{r cars}
+   #| include: !expr params$solution
+   plot(cars)
+   ```
+
+## Find the numerical value of $2\pi$, to $4$ decimal places.
+   ```{r two-pi}
+   #| include: !expr params$solution
+   round(2 * pi, 4)
+   ```
+
+## Show that $e^{i\pi}+1=0$.
+   ```{r euler}
+   #| results: "asis"
+   #| echo: false
+   #| include: !expr params$solution
+   string0 <- "
+   \\begin{align*}
+   e^{i\\pi}+1&=\\cos\\pi+i\\sin\\pi+1\\\\
+   &=-1+i\\times0+1=0
+   \\end{align*}
+   "
+   cat(string0, "\n")
+   ```
+  
+<!-- A comment that won't appear in the output. -->
