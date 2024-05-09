@@ -1,0 +1,13 @@
+# Computational reproducibility {#repro}
+
+Plot the `cars` data set in `R`. What do you observe?
+
+```{r plot-cars}
+#| out.width: "70%"
+#| fig.cap: "Cars dataset"
+#| include: !expr params$solution
+plot(cars)
+```
+
+A positive correlation between `speed` and `dist`
+can be seen in Figure \@ref(fig:plot-cars).

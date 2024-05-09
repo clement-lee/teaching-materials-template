@@ -1,0 +1,31 @@
+# Mathematical Identities {#chp-identity}
+
+This is Chapter \@ref(chp-identity).
+
+## LaTeX environments
+We can use `equation` envrionment as in LaTeX.
+
+\begin{equation}
+  e^{i\pi}+1=0
+  (\#eq:euler)
+\end{equation}
+Equation \@ref(eq:euler) is the Euler's identity.
+
+
+## Bookdown environments
+These start with `::: {. }` and end with `:::`.
+
+::: {.theorem name="Euler's identity" #euler-identity}
+$e^{i\pi}+1=0$
+:::
+
+The proof of Theorem \@ref(thm:euler-identity) is as below:
+
+::: {.proof}
+\begin{align*}
+  e^{i\pi}+1&=\cos\pi+i\sin\pi+1\\
+  &=-1+i\times0+1=0
+\end{align*}
+:::
+
+The proof is written in the same kind of environments as the theorem.

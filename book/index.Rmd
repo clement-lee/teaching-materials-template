@@ -1,0 +1,20 @@
+---
+title: "MATH9999 Lecture Notes"
+author: "Clement Lee"
+date: Semester 2, 2023/2024  
+output: bookdown::gitbook
+documentclass: book
+papersize: a4
+geometry:
+- margin=1in
+fontsize: 12pt
+bibliography: [references.bib]
+biblio-style: apalike
+link-citations: yes
+params:
+  solution: ""
+---
+
+# Module overview {-}
+
+Say something about the module. The `{-}` in the Rmd file is so that this chapter doesn't get numbered.

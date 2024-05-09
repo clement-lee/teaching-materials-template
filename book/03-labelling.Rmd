@@ -1,0 +1,16 @@
+# Labelling {#label}
+
+
+| Environment | Where label? | When labelling | When referencing |
+|:-----:|:-------:|:---------:|:-------:|
+| Chapter/section | After name | `{#chapter-name}` | `\@ref(chapter-name)` |
+| Equation | Before/after equation | `(\#eq:euler)` | `\@ref(eq:euler)` |
+| Theorem | 1st line of environment | `::: {.theorem #identity}` | `\@ref(thm:identity)` |
+| Proof | Can't label | N/A | N/A |
+| Figure | 1st line of environment | ` ```{r plot-cars} ` | `\@ref(fig:plot-cars)` |
+
+It's confusing!
+
+* When labelling: apart from equations, don't add the required prefix; relatedly, don't use colon `:` in the label name or things will break.
+* When referencing: apart from chapters/sections, add the required prefix; always use `\@ref()` so that referencing works in both html & pdf.
+* In addition to colon `:`, avoid using underscore `_` in labels as things **might** break; the hyphen `-` is the best bet.
