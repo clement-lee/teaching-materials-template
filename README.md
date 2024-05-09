@@ -1,6 +1,6 @@
 # Templates for automated generation of teaching materials 
 
-* Each of `manual/`, `notes`/`, `rmarkdown/` and `slides/` contains the source files & the generated documents (pdf and/or html).
+* Each of `manual/`, `notes/`, `rmarkdown/` and `slides/` contains the source files & the generated documents (pdf and/or html).
 * See the sections below for the description of their content and instructions for replicating the document generation.
 * All files are relative to the directory in the section heading. Therefore, when following the instructions, it is assumed the working directory has been set (in a terminal or in RStudio) to whatever the section heading is.
 
@@ -14,28 +14,28 @@
 * These are the questions & answers generated from one single RMarkdown file `practical1.Rmd`.
 * To obtain the outputs in `generated/`, do one of the following:
   - In an R(Studio) console, type `source("generate_rmarkdown.R")`.
-  - (Linux) In a terminal, type `Rscript generate_rmarkdown.R`.
-  - (Linux) In a terminal, type `make`; this utilises the `makefile` instead of `generate_rmarkdown.R`.
+  - In a Linux terminal, type `Rscript generate_rmarkdown.R`.
+  - In a Linux terminal, type `make`; this utilises the `makefile` instead of `generate_rmarkdown.R`.
 
 ## slides/
 
 * These are slides with or without gaps generated from one single RMarkdown file `slides.Rmd`.
 * To obtain the outputs in `generated/`, do one of the following:
   - In an R(Studio) console, type `source("generate_slides.R")`.
-  - (Linux) In a terminal, type `Rscript generate_slides.R`.
-  - (Linux) In a terminal, type `make`; this utilises the `makefile` instead of `generate_slides.R`.
+  - In a Linux terminal, type `Rscript generate_slides.R`.
+  - In a Linux terminal, type `make`; this utilises the `makefile` instead of `generate_slides.R`.
 
-# Previously
-
-This repository was originally for similar materials from various sources. For legacy purposes, the instructions are kept below.
-
-## previous/notes/
+## notes/
 
 * These are notes with or without solutions generated from the RMarkdown files within.
 * To obtain the outputs in `completed/` and `gaps/`, do one of the following:
   - In an R(Studio) console, type `source("generate_notes.R")`.
-  - (Linux) In a terminal, type `Rscript generate_notes.R`.
-  - (Linux) In a terminal, type `make`; this utilises the `makefile` instead of `generate_notes.R`.
+  - In a Linux terminal, type `Rscript generate_notes.R`.
+  - In a Linux terminal, type `make`; this utilises the `makefile` instead of `generate_notes.R`.
+
+# Previously
+
+This repository was originally for similar materials from various sources. For legacy purposes, the instructions are kept below.
 
 ## previous/slides/
 These are the actual slides presented at the [TALMO workshop](http://talmo.uk/dayMTFT2021.html). The beamer slides (pdf) & ioslides slides (html) are identical in their content. Together with the source code, they are provided here for the sake of completeness, and to showcase (R)markdown.
