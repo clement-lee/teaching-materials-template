@@ -42,7 +42,7 @@
   - In a Linux terminal, type `Rscript generate_notes.R`.
   - In a Linux terminal, type `make`; this utilises the `makefile` instead of `generate_notes.R`.
 * Additional software requirements:
-  - LaTeX distribution for pdf outputs, recommended to be installed via the [R package tinytex](https://cran.r-project.org/package=tinytex).
+  - LaTeX distribution for pdf outputs, recommended to be installed via the R package [tinytex](https://cran.r-project.org/package=tinytex).
   - R packages [rmarkdown](https://cran.r-project.org/package=rmarkdown) & [bookdown](https://cran.r-project.org/package=bookdown).
 
 # Previously
