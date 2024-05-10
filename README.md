@@ -2,12 +2,15 @@
 
 * Each of `manual/`, `notes/`, `rmarkdown/` and `slides/` contains the source files & the generated documents (pdf and/or html).
 * See the sections below for the description of their content and instructions for replicating the document generation.
-* All files are relative to the directory in the section heading. Therefore, when following the instructions, it is assumed the working directory has been set (in a terminal or in RStudio) to whatever the section heading is.
+* All files are relative to the directory in the section heading. Therefore, when following the instructions, it is assumed the working directory has been set (in a terminal or in R(Studio)) to whatever the section heading is.
+* Software requirements: R (4.1.0 or above) & RStudio (optional but recommended).
 
 ## manual/
 
 * These are the questions & answers in separate files. They are primarily for comparison with the automated approaches in other sub-directories.
 * Compiling `practical1_questions.tex` using your favourite TeX editor or in RStudio outputs `generated/practical1_questions.pdf`. Same for `practical1_solutions.tex`.
+* Additional software requirements:
+  - LaTeX distribution for pdf outputs, recommended to be installed via the R package [tinytex](https://cran.r-project.org/package=tinytex). 
 
 ## rmarkdown/
 
@@ -16,6 +19,9 @@
   - In an R(Studio) console, type `source("generate_rmarkdown.R")`.
   - In a Linux terminal, type `Rscript generate_rmarkdown.R`.
   - In a Linux terminal, type `make`; this utilises the `makefile` instead of `generate_rmarkdown.R`.
+* Additional software requirements:
+  - LaTeX distribution for pdf outputs, recommended to be installed via the R package [tinytex](https://cran.r-project.org/package=tinytex).
+  - R package [rmarkdown](https://cran.r-project.org/package=rmarkdown).
 
 ## slides/
 
@@ -24,6 +30,9 @@
   - In an R(Studio) console, type `source("generate_slides.R")`.
   - In a Linux terminal, type `Rscript generate_slides.R`.
   - In a Linux terminal, type `make`; this utilises the `makefile` instead of `generate_slides.R`.
+* Additional software requirements:
+  - LaTeX distribution for pdf outputs, recommended to be installed via the R package [tinytex](https://cran.r-project.org/package=tinytex).
+  - R package [rmarkdown](https://cran.r-project.org/package=rmarkdown).
 
 ## notes/
 
@@ -32,6 +41,9 @@
   - In an R(Studio) console, type `source("generate_notes.R")`.
   - In a Linux terminal, type `Rscript generate_notes.R`.
   - In a Linux terminal, type `make`; this utilises the `makefile` instead of `generate_notes.R`.
+* Additional software requirements:
+  - LaTeX distribution for pdf outputs, recommended to be installed via the [R package tinytex](https://cran.r-project.org/package=tinytex).
+  - R packages [rmarkdown](https://cran.r-project.org/package=rmarkdown) & [bookdown](https://cran.r-project.org/package=bookdown).
 
 # Previously
 
