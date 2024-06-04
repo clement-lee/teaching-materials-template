@@ -4,6 +4,9 @@
 * See the sections below for the description of their content and instructions for replicating the document generation.
 * All files are relative to the directory in the section heading. Therefore, when following the instructions, it is assumed the working directory has been set (in a terminal or in R(Studio)) to whatever the section heading is.
 * Software requirements: R (4.1.0 or above) & RStudio (optional but recommended).
+* Presentations related to this work:
+  - https://clement-lee.github.io/slides/bookdown_20231208.html
+  - https://clement-lee.github.io/slides/ukcots_20240614.html
 
 ## manual/
 
